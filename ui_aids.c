@@ -1,4 +1,4 @@
-#include "../../brick_game/tetris/s21_tetris.h"
+#include "tetris.h"
 
 void initial_field(WINDOW *field, WINDOW *info, WINDOW *menu, GameInfo_t data) {
   wattron(info, COLOR_PAIR(10)), wattron(menu, COLOR_PAIR(10)),
