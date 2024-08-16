@@ -1,4 +1,4 @@
-#include "s21_tetris.h"
+#include "tetris.h"
 
 int main() {
   userInput('\0', 0);
