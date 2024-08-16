@@ -1,4 +1,4 @@
-#include "../../brick_game/tetris/s21_tetris.h"
+#include "tetris.h"
 
 GameInfo_t *updateCurrentState() {
   static int count, run, over;
