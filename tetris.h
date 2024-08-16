@@ -1,5 +1,5 @@
-#ifndef S21_TETRIS_H
-#define S21_TETRIS_H
+#ifndef TETRIS_H
+#define TETRIS_H
 #include <check.h>
 #include <fcntl.h>
 #include <locale.h>
