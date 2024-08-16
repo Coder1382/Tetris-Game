@@ -1,4 +1,4 @@
-#include "s21_tetris.h"
+#include "tetris.h"
 
 void move_left(GameInfo_t *data) {
   int x = 0, i = 0, j = 0;
