@@ -9,8 +9,8 @@ all:	clean tetris.a test gcov_report
 s21_tetris.a:	tetris.o
 	ar rcs tetris.a *.o
 	ranlib tetris.a
-s21_tetris.o:	tetris/*.c gui/cli/*.c *.h
-	$(RUN) *.c *.c -c
+s21_tetris.o:	*.c *.h
+	$(RUN) *.c -c
 clean:
 	rm -rf testresult *.gcda *.gcno *.o *.info *.a tests/*.gcno *.tar.gz tests/report test.dSYM docs/html docs/latex report
 s21_tetris_install.o:	*.c *.h
