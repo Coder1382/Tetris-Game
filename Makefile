@@ -19,6 +19,7 @@ tetris:	s21_tetris_install.o
 install:	tetris
 	mkdir tetris_game
 	install tetris tetris_game
-play:	./tetris
+play:
+	./tetris
 uninstall:
 	rm -rf tetris_game
