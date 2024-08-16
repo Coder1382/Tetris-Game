@@ -40,7 +40,7 @@ void userInput(UserAction_t input, int hold) {
   }
   if (data->speed > 0 && data->score >= data->high_score){
     (f = fopen("max_score.txt", "w")) ? fprintf(f, "%d", data->score), fclose(f), f = NULL : 0;
-    data.high_score=data.score;
+    data->high_score=data->score;
   }
   trim_top(data);
   if (key == Terminate) {
