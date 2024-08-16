@@ -1,4 +1,4 @@
-#include "s21_tetris.h"
+#include "tetris.h"
 
 void userInput(UserAction_t input, int hold) {
   GameInfo_t *data = NULL;
