@@ -1,5 +1,4 @@
 #include "tetris.h"
-
 void move_left(GameInfo_t *data) {
   int x = 0, i = 0, j = 0;
   for (x = 0; x < 4; x++) {

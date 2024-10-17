@@ -1,25 +1,25 @@
-#.PHONY: all clean dist dvi install uninstall
 RUN = gcc -Wall -Werror -Wextra -O2 -std=c11 --pedantic
 ifeq ($(shell uname),Linux)
-	OS = -lcheck -lm -lrt -lpthread -lsubunit -lncursesw -lgcov
+	OS = -lcheck -lm -lrt -lpthread -lsubunit -lncursesw
 else
-	OS = -lcheck -lm -lpthread -lncursesw -lgcov
+	OS = -lcheck -lm -lpthread -lncursesw
 endif
-all:	clean tetris.a test gcov_report
-s21_tetris.a:	tetris.o
+all:	clean install
+tetris.a:	tetris.o
 	ar rcs tetris.a *.o
 	ranlib tetris.a
-s21_tetris.o:	*.c *.h
+tetris.o:	*.c *.h
 	$(RUN) *.c -c
 clean:
-	rm -rf testresult *.gcda *.gcno *.o *.info *.a tests/*.gcno *.tar.gz tests/report test.dSYM docs/html docs/latex report
-s21_tetris_install.o:	*.c *.h
-tetris:	s21_tetris_install.o
+	rm -rf Tetris *.gcda *.gcno *.o *.info *.a *.tar.gz docs/html
+tetris:	tetris.o
 	$(RUN) *.c -o tetris $(OS)
-install:	tetris
-	mkdir tetris_game
-	install tetris tetris_game
-play:
-	./tetris
+install:	clean tetris
+	mkdir Tetris && mv tetris Tetris
+	./Tetris/tetris
 uninstall:
-	rm -rf tetris_game
+	rm -rf Tetris
+dist:
+	tar czvf tetris.tar.gz --ignore-failed-read Makefile
+dvi:
+	$(shell which firefox || which xdg-open || which open || which x-www-browser) docs/html/index.html

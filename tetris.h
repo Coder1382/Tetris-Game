@@ -12,13 +12,9 @@
 #include <unistd.h>
 #include <wchar.h>
 typedef enum {
-  Start = 10,
-  Pause = 32,
-  Terminate = 27,
-  Left = KEY_LEFT,
-  Right = KEY_RIGHT,
-  Down = KEY_DOWN,
-  Action = KEY_UP
+  Start = 10, Pause = 32, Terminate = 27,
+  Left = KEY_LEFT, Right = KEY_RIGHT,
+  Down = KEY_DOWN, Action = KEY_UP
 } UserAction_t;
 typedef struct {
   int set[4][22][12];

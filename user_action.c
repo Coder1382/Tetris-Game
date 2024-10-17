@@ -1,5 +1,4 @@
 #include "tetris.h"
-
 void userInput(UserAction_t input, int hold) {
   GameInfo_t *data = NULL;
   static double stop, hault, temp;
@@ -38,10 +37,9 @@ void userInput(UserAction_t input, int hold) {
           stop = ((double)clock()) + CLOCKS_PER_SEC * data->speed / 10.0;
     if (data->speed > 0) remove_filled(data);
   }
-  if (data->speed > 0 && data->score >= data->high_score){
-    (f = fopen("max_score.txt", "w")) ? fprintf(f, "%d", data->score), fclose(f), f = NULL : 0;
-    data->high_score=data->score;
-  }
+  if (data->speed < 0 && data->score >= data->high_score)
+    (f = fopen("max_score.txt", "w")) ? fprintf(f, "%d", data->score),
+        fclose(f), f = NULL : 0;
   trim_top(data);
   if (key == Terminate) {
     if (data->score >= data->high_score)

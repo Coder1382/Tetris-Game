@@ -1,5 +1,4 @@
 #include "tetris.h"
-
 GameInfo_t *updateCurrentState() {
   static int count, run, over;
   static GameInfo_t data;
